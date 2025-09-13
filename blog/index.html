@@ -1,1 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Ofoegbu Vincent</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .blog-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .blog-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .blog-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease;
+      padding: 1rem;
+    }
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    .blog-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.2rem;
+    }
+    .blog-card p {
+      color: #555;
+    }
+    .blog-card a {
+      margin-top: auto;
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      background: #0078D7;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-align: center;
+      transition: background 0.3s ease;
+    }
+    .blog-card a:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="../index.html" class="logo">Ofoegbu Vincent</a>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../certifications.html">Certifications</a></li>
+        <li><a href="../projects/index.html">Projects</a></li>
+        <li><a href="index.html" class="active">Blog</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="blog-container">
+    <h1>Blog Categories</h1>
+    <p>Choose a category to share my journey, labs, opinions, and certifications step by step.</p>
+
+    <div class="blog-list">
+      <div class="blog-card">
+        <h3>Personal Story & Motivation</h3>
+        <p>Share my journey, mindset, and motivation for pursuing cybersecurity.</p>
+        <a href="story.html">Read More →</a>
+      </div>
+      <div class="blog-card">
+        <h3>TryHackMe Labs Walkthroughs & Solutions</h3>
+        <p>Step-by-step explanations, screenshots, and solutions for completed labs.</p>
+        <a href="tryhackme.html">Read More →</a>
+      </div>
+      <div class="blog-card">
+        <h3>Personal Opinions on Topics</h3>
+        <p>My thoughts and insights on cybersecurity trends, techniques, and practices.</p>
+        <a href="opinions.html">Read More →</a>
+      </div>
+      <div class="blog-card">
+        <h3>Steps for Earning Certifications</h3>
+        <p>Documenting the process I followed to earn each certification, with images and study notes.</p>
+        <a href="certifications-post.html">Read More →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Find me on <a href="https://github.com/ofoegbuvincent">GitHub</a> • <a href="https://linkedin.com/in/vincent-ofoegbu">LinkedIn</a></p>
+  </footer>
+</body>
+</html>
 
