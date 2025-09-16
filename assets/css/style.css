@@ -10,3 +10,7 @@ body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
 #hero p{margin:8px 0 16px}
 .btn{display:inline-block;padding:8px 12px;border:1px solid #222;border-radius:6px;text-decoration:none}
 .site-footer{padding:20px;text-align:center;border-top:1px solid #eee;margin-top:40px;color:#555}
+.nav-links a.active {
+  color: #0078D7;
+  border-bottom: 2px solid #0078D7;
+}
