@@ -18,3 +18,30 @@ img {
   max-width: 100%;
   height: auto;
 }
+/* Highlight active nav link */
+.nav-links a.active {
+  color: #ff5722;
+  font-weight: bold;
+  border-bottom: 2px solid #ff5722;
+}
+
+/* Button branding */
+.btn {
+  background: #0078D7;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #005bb5;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
