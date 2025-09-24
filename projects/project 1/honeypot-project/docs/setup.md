@@ -21,7 +21,6 @@ This document explains how I installed and configured [Cowrie](https://github.co
 
 Before running Cowrie, configure the firewall to allow necessary outbound and loopback traffic. Example using `iptables`:
 
-```bash
 # Default policy: drop all outgoing traffic
 sudo iptables -P OUTPUT DROP
 
@@ -37,4 +36,5 @@ sudo iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
 # Allow HTTP (TCP port 80) and HTTPS (TCP port 443)
 sudo iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
 sudo iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
-'![Update Firewall Rules](../screenshoots/firewallrules.png)'
+📸 *Screenshot Placeholder: Updating Firewall Rules
+![Update Firewall Rules](../screenshoots/firewallrules.png)
