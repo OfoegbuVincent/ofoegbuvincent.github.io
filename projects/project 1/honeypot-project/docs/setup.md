@@ -13,7 +13,7 @@ This document explains how I installed and configured [Cowrie](https://github.co
 - Non-root user with `sudo` privileges  
 
 📸 *Screenshot Placeholder: Upgrading and Updating System (e.g., `Sudo apt-get update && sudo apt-get upgrade -y`)*  
-`![Update and Upgrade Linux](../screenshoots/update_linux.png)`  
+![Update and Upgrade Linux](../screenshoots/update_linux.png)  
 
 ---
 
