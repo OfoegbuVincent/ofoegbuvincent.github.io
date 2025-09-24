@@ -39,3 +39,14 @@ sudo iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
 ```
 📸 *Screenshot Placeholder: Updating Firewall Rules
 ![Update Firewall Rules](../screenshoots/firewallrules.png)
+
+## 3. Install Dependencies
+
+Cowrie requires several packages and libraries. I Installed them using:
+
+```bash
+sudo apt install -y git python3-venv python3-pip build-essential libssl-dev libffi-dev libpython3-dev authbind
+
+```
+📸 *Screenshot Placeholder: Intsalled Dependencies
+![Update Firewall Rules](../screenshoots/dependencies.png)
