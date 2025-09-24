@@ -5,9 +5,11 @@ This repository documents my journey setting up and experimenting with [Cowrie](
 This is **Phase 1** of the project: installing and running Cowrie successfully.  
 Future phases will integrate Cowrie with the ELK stack (Elasticsearch, Logstash, Kibana) for advanced log analysis and visualization.  
 
+---
 
-## Repository Structure
+## 📂 Repository Structure
 
+```bash
 .
 ├── README.md
 ├── screenshots/
