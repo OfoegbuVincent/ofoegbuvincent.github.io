@@ -12,8 +12,8 @@ This document explains how I installed and configured [Cowrie](https://github.co
 - Git installed  
 - Non-root user with `sudo` privileges  
 
-📸 *Screenshot Placeholder: System info check (e.g., `lsb_release -a` or `python3 --version`)*  
-`![System Info](../screenshots/system_info.png)`  
+📸 *Screenshot Placeholder: Upgrading and Updating System (e.g., `Sudo apt-get update && sudo apt-get upgrade -y`)*  
+`![Update and Upgrade Linux](../screenshoots/update_linux.png)`  
 
 ---
 
