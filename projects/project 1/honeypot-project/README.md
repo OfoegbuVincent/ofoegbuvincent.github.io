@@ -21,7 +21,7 @@ Future phases will integrate Cowrie with the ELK stack (Elasticsearch, Logstash,
 
 ## Getting Started
 
-If you want to replicate my setup, start with the **Setup Guide**:  
+If you want to replicate my setup, start with the Setup Guide:  
 📄 [docs/setup.md](docs/setup.md)  
 
 ## Documentation
@@ -37,7 +37,7 @@ Screenshots of Cowrie in action are stored in the [`screenshots/`](screenshots) 
 
 ## Disclaimer
 
-This project is for **educational and research purposes only**.  
+This project is for educational and research purposes only.  
 Do not expose this honeypot to the public internet without proper isolation, monitoring, and safety measures.  
 
 ##  Coming Soon
