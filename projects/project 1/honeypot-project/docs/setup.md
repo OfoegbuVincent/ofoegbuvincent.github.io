@@ -49,4 +49,13 @@ sudo apt install -y git python3-venv python3-pip build-essential libssl-dev libf
 
 ```
 📸 *Screenshot Placeholder: Intsalled Dependencies
-![Update Firewall Rules](../screenshoots/dependencies.png)
+![Install Dependencies](../screenshoots/dependencies.png)
+
+## 4. Create a Non-root User With Sudo Privileges
+This minimizes the attack surface by isolating cowrie to that user. 
+```bash
+sudo adduser --disabled-password <user>
+```
+📸 *Screenshot Placeholder: Add a Non-root User
+![Added a Non-root User](../screenshoots/addeduser.png)
+
