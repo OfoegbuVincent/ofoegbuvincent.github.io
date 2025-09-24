@@ -17,8 +17,24 @@ This document explains how I installed and configured [Cowrie](https://github.co
 
 ---
 
-## 2. Clone the Cowrie Repository
+## 2. Update Firewall Rules
+
+Before running Cowrie, configure the firewall to allow necessary outbound and loopback traffic. Example using `iptables`:
 
 ```bash
-git clone https://github.com/cowrie/cowrie
-cd cowrie
+# Default policy: drop all outgoing traffic
+sudo iptables -P OUTPUT DROP
+
+# Allow loopback interface
+sudo iptables -A OUTPUT -o lo -j ACCEPT
+
+# Allow established and related connections (conntrack)
+sudo iptables -A OUTPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+
+# Allow DNS (UDP port 53)
+sudo iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
+
+# Allow HTTP (TCP port 80) and HTTPS (TCP port 443)
+sudo iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
+sudo iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
+'![Update Firewall Rules](../screenshoots/firewallrules.png)'
