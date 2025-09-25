@@ -135,3 +135,35 @@ listen_endpoints → configure which ports Cowrie listens on (default is SSH on 
 📸 Screenshot Placeholder: Editing Cowrie Config File
 ![Editing Cowrie](../screenshoots/configuredcowrie.png)
 
+## 9. Customize Fake Credentials
+
+Cowrie ships with a sample credentials file `userdb.example`. Create the actual `userdb.txt` from the example and edit it to define fake usernames/passwords that attackers can use to successfully log into the honeypot.
+
+From inside the `cowrie` directory run:
+```bash
+# Copy the example to create the editable userdb
+cp etc/userdb.example etc/userdb.txt
+```
+Open userdb.txt with the text editor:
+```bash
+nano etc/userdb.txt
+```
+📸 Screenshot Placeholder: Editing Cowrie Userdb File
+![Editing Cowrie Userdb](../screenshoots/userdb.png)
+
+## 10. Start Cowrie
+switch to the user you created in Step 4 above
+```bash
+sudo -u <user> -H bash
+# activate venv and start
+cd ~/cowrie
+source cowrie-env/bin/activate
+bin/cowrie start
+```
+📸 Screenshot Placeholder: Starting Cowrie
+![Start Cowrie](../screenshoots/startcowrie.png)
+
+## 11. Test Cowrie and View Logs
+
+
+
