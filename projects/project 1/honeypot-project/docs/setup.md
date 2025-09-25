@@ -59,3 +59,20 @@ sudo adduser --disabled-password <user>
 📸 *Screenshot Placeholder: Add a Non-root User
 ![Added a Non-root User](../screenshoots/addeduser.png)
 
+## 5. Clone the Cowrie Repository
+
+With the non-root user created, the next step is to clone the official [Cowrie repository](https://github.com/cowrie/cowrie) from GitHub.  
+
+Switch to the non-root user (replace `cowrie` with the username you created):  
+```bash
+sudo su - cowrie
+```
+Then clone the repository:
+```bash
+git clone https://github.com/cowrie/cowrie.git
+cd cowrie
+```
+
+📸 *Screenshot Placeholder: Add a Non-root User
+![Added a Non-root User](../screenshoots/clonedcowrie.png)
+
