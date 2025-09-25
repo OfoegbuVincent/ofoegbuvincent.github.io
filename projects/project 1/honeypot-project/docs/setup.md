@@ -99,5 +99,39 @@ pip install -r requirements.txt || true
 📸 *Screenshot Placeholder: Installing Cowrie Dependencies and Setting up Virtual Environment
 ![Installed Dependencies](../screenshoots/cowriedependencies.png)
 
+## 7. Install Cowrie in Editable Mode
 
+With the virtual environment activated and dependencies installed, the next step is to install Cowrie in editable mode.  
+This allows one to make changes to the Cowrie source code and run it without needing to reinstall.  
+
+Run:  
+```bash
+pip install -e .
+```
+📸 Screenshot Placeholder: Installing Cowrie in Editable Mode
+![Installed Cowrie in Editable Mode](../screenshoots/editable.png)
+
+## 8. Configure Cowrie
+
+Before starting Cowrie, one needs to set up its configuration file.  
+Cowrie provides a sample configuration file called `cowrie.cfg.dist`.  
+One should make a copy of this file and rename it to `cowrie.cfg`.  
+
+From inside the `cowrie` directory:  
+
+```bash
+cd ~/cowrie
+
+# Copy the sample config file
+cp etc/cowrie.cfg.dist etc/cowrie.cfg
+```
+I could now edit the new config file to customize the cowrie honeypot. For example:
+```bash
+nano etc/cowrie.cfg
+```
+Key settings one may want to review:
+hostname → change the fake system hostname attackers will see.
+listen_endpoints → configure which ports Cowrie listens on (default is SSH on port 2222, not 22).
+📸 Screenshot Placeholder: Editing Cowrie Config File
+![Editing Cowrie](../screenshoots/configuredcowrie.png)
 
