@@ -73,6 +73,31 @@ git clone https://github.com/cowrie/cowrie.git
 cd cowrie
 ```
 
-📸 *Screenshot Placeholder: Add a Non-root User
-![Added a Non-root User](../screenshoots/clonedcowrie.png)
+📸 *Screenshot Placeholder: Cloned Cowrie from Github
+![Cloned Cowrie](../screenshoots/clonedcowrie.png)
+
+## 6. Set Up Python Virtual Environment
+
+Cowrie is written in Python, so it’s best practice to run it inside a virtual environment.  
+This keeps Cowrie’s dependencies isolated from the system Python environment.
+
+From inside the `cowrie` directory:  
+
+```bash
+# This is to ensure I am inside the cloned repository
+cd ~/cowrie
+
+# I created a virtual environment
+python3 -m venv cowrie-env
+
+# I activated the virtual environment
+source cowrie-env/bin/activate
+# I installed dependencies and upgraded to the pip lastest version
+pip install --upgrade pip
+pip install -r requirements.txt || true
+```
+📸 *Screenshot Placeholder: Installing Cowrie Dependencies and Setting up Virtual Environment
+![Installed Dependencies](../screenshoots/cowriedependencies.png)
+
+
 
