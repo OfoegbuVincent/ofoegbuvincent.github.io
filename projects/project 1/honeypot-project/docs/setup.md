@@ -12,7 +12,7 @@ This document explains how I installed and configured [Cowrie](https://github.co
 - Git installed  
 - Non-root user with `sudo` privileges  
 
-📸 *Screenshot Placeholder: Upgrading and Updating System (e.g., `Sudo apt-get update && sudo apt-get upgrade -y`)*  
+📸 Upgrading and Updating System (e.g., `Sudo apt-get update && sudo apt-get upgrade -y`)*  
 ![Update and Upgrade Linux](../screenshoots/update_linux.png)  
 
 ---
@@ -37,7 +37,7 @@ sudo iptables -A OUTPUT -p udp --dport 53 -j ACCEPT
 sudo iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
 sudo iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
 ```
-📸 *Screenshot Placeholder: Updating Firewall Rules
+📸 Updating Firewall Rules
 ![Update Firewall Rules](../screenshoots/firewallrules.png)
 
 ## 3. Install Dependencies
@@ -48,7 +48,7 @@ Cowrie requires several packages and libraries. I Installed them using:
 sudo apt install -y git python3-venv python3-pip build-essential libssl-dev libffi-dev libpython3-dev authbind
 
 ```
-📸 *Screenshot Placeholder: Intsalled Dependencies
+📸 Intsalled Dependencies
 ![Install Dependencies](../screenshoots/dependencies.png)
 
 ## 4. Create a Non-root User With Sudo Privileges
@@ -56,7 +56,7 @@ This minimizes the attack surface by isolating cowrie to that user.
 ```bash
 sudo adduser --disabled-password <user>
 ```
-📸 *Screenshot Placeholder: Add a Non-root User
+📸 Add a Non-root User
 ![Added a Non-root User](../screenshoots/addeduser.png)
 
 ## 5. Clone the Cowrie Repository
@@ -73,7 +73,7 @@ git clone https://github.com/cowrie/cowrie.git
 cd cowrie
 ```
 
-📸 *Screenshot Placeholder: Cloned Cowrie from Github
+📸 Cloned Cowrie from Github
 ![Cloned Cowrie](../screenshoots/clonedcowrie.png)
 
 ## 6. Set Up Python Virtual Environment
@@ -96,7 +96,7 @@ source cowrie-env/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt || true
 ```
-📸 *Screenshot Placeholder: Installing Cowrie Dependencies and Setting up Virtual Environment
+📸 Installing Cowrie Dependencies and Setting up Virtual Environment
 ![Installed Dependencies](../screenshoots/cowriedependencies.png)
 
 ## 7. Install Cowrie in Editable Mode
@@ -108,7 +108,7 @@ Run:
 ```bash
 pip install -e .
 ```
-📸 Screenshot Placeholder: Installing Cowrie in Editable Mode
+📸  Installing Cowrie in Editable Mode
 ![Installed Cowrie in Editable Mode](../screenshoots/editable.png)
 
 ## 8. Configure Cowrie
@@ -132,7 +132,7 @@ nano etc/cowrie.cfg
 Key settings one may want to review:
 hostname → change the fake system hostname attackers will see.
 listen_endpoints → configure which ports Cowrie listens on (default is SSH on port 2222, not 22).
-📸 Screenshot Placeholder: Editing Cowrie Config File
+📸 Editing Cowrie Config File
 ![Editing Cowrie](../screenshoots/configuredcowrie.png)
 
 ## 9. Customize Fake Credentials
@@ -148,7 +148,7 @@ Open userdb.txt with the text editor:
 ```bash
 nano etc/userdb.txt
 ```
-📸 Screenshot Placeholder: Editing Cowrie Userdb File
+📸 Editing Cowrie Userdb File
 ![Editing Cowrie Userdb](../screenshoots/userdb.png)
 
 ## 10. Start Cowrie
@@ -160,10 +160,23 @@ cd ~/cowrie
 source cowrie-env/bin/activate
 bin/cowrie start
 ```
-📸 Screenshot Placeholder: Starting Cowrie
+📸 Starting Cowrie
 ![Start Cowrie](../screenshoots/startcowrie.png)
 
 ## 11. Test Cowrie and View Logs
-
+After starting Cowrie, I ran a few controlled tests to confirm it is capturing login attempts and session activity. To begin with, I spinned up my kali linux VM. Next, I created a passwords.txt file and populated it with a list of commonly used passwords. Then, I ran a brute-force with Hydra using the password.txt file i created earlier.
+```bash
+hydra -l <username> -P password.txt -s 2222 ssh://<traget-ip>
+```
+Interestingly, all the attempts were logged in cowrie. Simultaneouly, i was also viewing live logs of the brute-force attempts in my ubuntu server where cowrie was setup  using this command.
+```bash
+tail -f var/log/cowrie/cowrie.log
+```
+Finally, I logged in with the password that returned successful from the brute-force attempt. I discovered that every command and prompt i entered as a logged-in user was reflected in the logs.
+```bash
+ssh -s 2222 <user>@<targetip>
+```
+📸 Testing Cowrie and Viewing Live Logs
+| ![Test Cowrie](../screenshoots/bruteforce.png) | ![View Logs](../screenshoots/attempts.png) |
 
 
