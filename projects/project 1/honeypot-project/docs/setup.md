@@ -133,7 +133,7 @@ Key settings one may want to review:
 hostname → change the fake system hostname attackers will see.
 listen_endpoints → configure which ports Cowrie listens on (default is SSH on port 2222, not 22).
 📸 Editing Cowrie Config File
-![Editing Cowrie](../screenshoots/configuredcowrie.png)
+![Editing Cowrie](../screenshots/configuredcowrie.png)
 
 ## 9. Customize Fake Credentials
 
