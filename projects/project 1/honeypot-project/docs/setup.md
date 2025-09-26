@@ -13,7 +13,7 @@ This document explains how I installed and configured [Cowrie](https://github.co
 - Non-root user with `sudo` privileges  
 
 📸 Upgrading and Updating System (e.g., `Sudo apt-get update && sudo apt-get upgrade -y`)*  
-![Update and Upgrade Linux](../screenshoots/update_linux.png)  
+![Update and Upgrade Linux](../screenshots/update_linux.png)  
 
 ---
 
@@ -38,7 +38,7 @@ sudo iptables -A OUTPUT -p tcp --dport 80 -j ACCEPT
 sudo iptables -A OUTPUT -p tcp --dport 443 -j ACCEPT
 ```
 📸 Updating Firewall Rules
-![Update Firewall Rules](../screenshoots/firewallrules.png)
+![Update Firewall Rules](../screenshots/firewallrules.png)
 
 ## 3. Install Dependencies
 
@@ -49,7 +49,7 @@ sudo apt install -y git python3-venv python3-pip build-essential libssl-dev libf
 
 ```
 📸 Intsalled Dependencies
-![Install Dependencies](../screenshoots/dependencies.png)
+![Install Dependencies](../screenshots/dependencies.png)
 
 ## 4. Create a Non-root User With Sudo Privileges
 This minimizes the attack surface by isolating cowrie to that user. 
@@ -57,7 +57,7 @@ This minimizes the attack surface by isolating cowrie to that user.
 sudo adduser --disabled-password <user>
 ```
 📸 Add a Non-root User
-![Added a Non-root User](../screenshoots/addeduser.png)
+![Added a Non-root User](../screenshots/addeduser.png)
 
 ## 5. Clone the Cowrie Repository
 
@@ -74,7 +74,7 @@ cd cowrie
 ```
 
 📸 Cloned Cowrie from Github
-![Cloned Cowrie](../screenshoots/clonedcowrie.png)
+![Cloned Cowrie](../screenshots/clonedcowrie.png)
 
 ## 6. Set Up Python Virtual Environment
 
@@ -97,7 +97,7 @@ pip install --upgrade pip
 pip install -r requirements.txt || true
 ```
 📸 Installing Cowrie Dependencies and Setting up Virtual Environment
-![Installed Dependencies](../screenshoots/cowriedependencies.png)
+![Installed Dependencies](../screenshots/cowriedependencies.png)
 
 ## 7. Install Cowrie in Editable Mode
 
@@ -109,7 +109,7 @@ Run:
 pip install -e .
 ```
 📸  Installing Cowrie in Editable Mode
-![Installed Cowrie in Editable Mode](../screenshoots/editable.png)
+![Installed Cowrie in Editable Mode](../screenshots/editable.png)
 
 ## 8. Configure Cowrie
 
@@ -149,7 +149,7 @@ Open userdb.txt with the text editor:
 nano etc/userdb.txt
 ```
 📸 Editing Cowrie Userdb File
-![Editing Cowrie Userdb](../screenshoots/userdb.png)
+![Editing Cowrie Userdb](../screenshots/userdb.png)
 
 ## 10. Start Cowrie
 switch to the user you created in Step 4 above
@@ -161,7 +161,7 @@ source cowrie-env/bin/activate
 bin/cowrie start
 ```
 📸 Starting Cowrie
-![Start Cowrie](../screenshoots/startcowrie.png)
+![Start Cowrie](../screenshots/startcowrie.png)
 
 ## 11. Test Cowrie and View Logs
 After starting Cowrie, I ran a few controlled tests to confirm it is capturing login attempts and session activity. To begin with, I spinned up my kali linux VM. Next, I created a passwords.txt file and populated it with a list of commonly used passwords. Then, I ran a brute-force with Hydra using the password.txt file i created earlier.
@@ -177,6 +177,6 @@ Finally, I logged in with the password that returned successful from the brute-f
 ssh -s 2222 <user>@<targetip>
 ```
 📸 Testing Cowrie and Viewing Live Logs
-| ![Test Cowrie](../screenshoots/bruteforce.png) | ![View Logs](../screenshoots/attempts.png) |
+| ![Test Cowrie](../screenshots/bruteforce.png) | ![View Logs](../screenshots/attempts.png) |
 
 
