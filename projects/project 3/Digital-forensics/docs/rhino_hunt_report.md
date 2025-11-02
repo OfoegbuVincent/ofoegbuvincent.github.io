@@ -90,7 +90,7 @@ Similarly, I opened rhino3.log. I traffic where I comibned the "export HTTP obje
 ![Retrieve RhinoApp](../screenshots/retrieve_rhinoapp.png) | ![Retrieve RhinoApp](../screenshots/retrieve_rhinoapp1.png) | ![Retrieve RhinoApp](../screenshots/retrieve_rhinoapp2.png) | ![Verify RhinoApp](../screenshots/verify_rhinoapp.png)
 
 
-5.4### ZIP File Retrieved via Wireshark
+5.5 ### ZIP File Retrieved via Wireshark
 After analysing the rhino.log file using Wireshark.  I found a ZIP file named "contraband" among the recovered files. When I tried to open it I was prompted for a password.
 **Steps I took**
 1. I converted the ZIP to a crackable hash with zip2john and saved the output hash to another file
@@ -109,3 +109,13 @@ After analysing the rhino.log file using Wireshark.  I found a ZIP file named "c
 
 ![john cracked password](../screenshots/crack_zipfile.png) | ![rhino2 from zip](../screenshots/verify_rhino2.png)
 
+
+5.6 ## Steganalysis & extraction (stegdetect, stegbreak, jphide)
+
+At this point I had **8 rhino images** (carved + exported). I needed 2 more to reach the required 10.
+
+**Steps performed**
+1. I scanned all recovered images with `stegdetect` to find likely stego candidates:
+2. For the two images flagged as passworded, I ran stegbreak to brute-force the stego password:
+3. I used jphide (with the recovered password) to extract the hidden inner image:
+![stegdetect results](../screenshots/run_stegdetect.png) | ![stegbreak cracked](../screenshots/run_stegbreak.png) | ![jphide extraction](../screenshots/retrieve_rhino9.png) | ![jphide extraction](../screenshots/retrieve_rhino10.png)
