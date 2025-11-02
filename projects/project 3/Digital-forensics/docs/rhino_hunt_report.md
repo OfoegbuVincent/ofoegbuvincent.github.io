@@ -45,17 +45,18 @@ I read the diary and I got a lead on what transpired, then I went through the ne
 5.4 Network trace analysis with Wireshark
 
 I opened rhino.log. I used the filter "tcp.port == 21". Then I found the FTP traffic where i retrieved the first rhino image using these steps
+```bash
 a. tcp.port == 21 
 b. follow the stream
 c. multiply the penultimate number by 256 and add the last number to it e.g 6*256 + 121 = 1657
 d. do tcp.port == 1657
 e. follow the stream and save the raw format
 f. you would get back the original image/file that was transferred over the network
-
+```
 
 ![Retrieve Rhino1](../screenshots/retrieve_rhino1.png) | ![Retrieve Rhino1](../screenshots/retrieve_rhino13.png) | ![Retrieve Rhino1](../screenshots/retrieve_rhino12.png)
 
-
+```bash
 I retrieved the third rhino image using these steps
 a. tcp.port == 21 
 b. follow the stream
@@ -64,7 +65,7 @@ d. do tcp.port == 1660
 e. follow the stream and save the raw format
 f. you would get back the original image/file that was transferred over the network
 
-
+```
 ![Retrieve Rhino1](../screenshots/retrieve_rhino31.png) | ![Retrieve Rhino1](../screenshots/retrieve_rhino32.png) | ![Retrieve Rhino1](../screenshots/retrieve_rhino33.png)
 
 
