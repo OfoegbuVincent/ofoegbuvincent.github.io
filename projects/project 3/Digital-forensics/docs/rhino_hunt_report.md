@@ -118,4 +118,24 @@ At this point I had **8 rhino images** (carved + exported). I needed 2 more to r
 1. I scanned all recovered images with `stegdetect` to find likely stego candidates:
 2. For the two images flagged as passworded, I ran stegbreak to brute-force the stego password:
 3. I used jphide (with the recovered password) to extract the hidden inner image:
+
+
 ![stegdetect results](../screenshots/run_stegdetect.png) | ![stegbreak cracked](../screenshots/run_stegbreak.png) | ![jphide extraction](../screenshots/retrieve_rhino9.png) | ![jphide extraction](../screenshots/retrieve_rhino10.png)
+
+6 ## Findings (
+
+Total images recovered: 10
+
+Matched artifacts: At least one image from the passworded ZIP (FTP) matched an image carved from the USB — linking the USB to the network transfer.
+
+Additional images: Two images retrieved via HTTP export.
+
+Stego: Two images contained hidden images — both extracted after cracking stego passwords.
+
+Executable: rhino.exe recovered from third network capture (saved under results/).
+
+Conclusion: Evidence clearly links the USB image contents to network transfers (matching filenames/hashes/timestamps).
+
+
+
+![Total Images](../screenshots/all_images.png)
