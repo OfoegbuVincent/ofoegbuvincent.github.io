@@ -89,3 +89,23 @@ Similarly, I opened rhino3.log. I traffic where I comibned the "export HTTP obje
 
 ![Retrieve RhinoApp](../screenshots/retrieve_rhinoapp.png) | ![Retrieve RhinoApp](../screenshots/retrieve_rhinoapp1.png) | ![Retrieve RhinoApp](../screenshots/retrieve_rhinoapp2.png) | ![Verify RhinoApp](../screenshots/verify_rhinoapp.png)
 
+
+5.4### ZIP File Retrieved via Wireshark
+After analysing the rhino.log file using Wireshark.  I found a ZIP file named "contraband" among the recovered files. When I tried to open it I was prompted for a password.
+**Steps I took**
+1. I converted the ZIP to a crackable hash with zip2john and saved the output hash to another file
+   ```bash
+   john-the-ripper.zip2john contraband.zip > contraband.hash
+   ```
+2. I cracked the hash with john using the rockyou.txt wordlist:
+   ```bash
+   john-the-ripper --wordlist=/usr/share/wordlists/rockyou.txt contraband.hash
+   ```
+3. I used the recovered password to unzip the file and extracted rhino2.jpg:
+   ```bash
+   unzip -P <password> contraband.zip
+   ```
+4 I verified rhino2.jpg matched an image recovered earlier by foremost (visual match, and by hash).
+
+![john cracked password](../results/screenshots/crack_zipfile.png) | ![rhino2 from zip](../docs/images_recovered/verify_rhino2.jpg)
+
