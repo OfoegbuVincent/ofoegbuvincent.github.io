@@ -66,6 +66,17 @@ e. follow the stream and save the raw format
 f. you would get back the original image/file that was transferred over the network
 
 ```
-![Retrieve Rhino1](../screenshots/retrieve_rhino31.png) | ![Retrieve Rhino1](../screenshots/retrieve_rhino32.png) | ![Retrieve Rhino1](../screenshots/retrieve_rhino33.png)
+![Retrieve Rhino3](../screenshots/retrieve_rhino31.png) | ![Retrieve Rhino3](../screenshots/retrieve_rhino32.png) | ![Retrieve Rhino3](../screenshots/retrieve_rhino33.png)
 
+```bash
+I retrieved the zip file using these steps
+a. tcp.port == 21 
+b. follow the stream
+c. multiply the penultimate number by 256 and add the last number to it e.g 7*256 + 210 = 2002
+d. do tcp.port == 2002
+e. follow the stream and save the raw format
+f. you would get back the original image/file that was transferred over the network
+
+```
+![Retrieve Rhino2](../screenshots/retrive_zipfile1.png) | ![Retrieve Rhino2](../screenshots/retrive_zipfile3.png) | ![Retrieve Rhino2](../screenshots/retrieve_zip2.png)
 
