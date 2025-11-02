@@ -107,5 +107,5 @@ After analysing the rhino.log file using Wireshark.  I found a ZIP file named "c
    ```
 4 I verified rhino2.jpg matched an image recovered earlier by foremost (visual match, and by hash).
 
-![john cracked password](../results/screenshots/crack_zipfile.png) | ![rhino2 from zip](../docs/images_recovered/verify_rhino2.jpg)
+![john cracked password](../screenshots/crack_zipfile.png) | ![rhino2 from zip](../screenshots/verify_rhino2.jpg)
 
