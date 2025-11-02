@@ -80,3 +80,12 @@ f. you would get back the original image/file that was transferred over the netw
 ```
 ![Retrieve Rhino2](../screenshots/retrive_zipfile1.png) | ![Retrieve Rhino2](../screenshots/retrive_zipfile3.png) | ![Retrieve Rhino2](../screenshots/retrieve_zip2.png)
 
+
+I opened rhino2.log. I traffic where I used the "export HTTP object traffic" option on Wireshark. Then, I retrieved the fourth and fifth rhino images. 
+
+![Retrieve Rhino45](../screenshots/retrieve_rhino45.png) 
+
+Similarly, I opened rhino3.log. I traffic where I comibned the "export HTTP object traffic" option and "http.request" filter on Wireshark. Then, I retrieved the rhino.exe app and verified the md5sum for further analysis. 
+
+![Retrieve RhinoApp](../screenshots/retrive_rhinoapp.png) | ![Retrieve RhinoApp](../screenshots/retrive_rhinoapp1.png) | ![Retrieve RhinoApp](../screenshots/retrieve_rhinoapp2.png) | ![Verify RhinoApp](../screenshots/verify_rhinoapp.png)
+
