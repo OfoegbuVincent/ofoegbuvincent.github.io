@@ -23,3 +23,15 @@ Environment: **Windows host** (file prep) + **SIFT VM** (analysis).
    md5sum rhino.log rhino2.log rhino3.log
    ```
     ![Verify Hashes](../screenshots/verify_hashes.png)
+
+## 5 — Step-by-step analysis (what I did)
+5.2 Carve images with foremost
+```bash
+foremost -i RHINOUSB.dd  -t jpg,gif,png
+```
+![Run Foremost](../screenshots/foremost.png)
+Inspectes recovered files, including docs,gif and jpg.
+![Verify Foremost](../screenshots/verify_foremost.png,../screenshots/verify_foremost2.png) 
+
+
+
