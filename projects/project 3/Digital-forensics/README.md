@@ -30,6 +30,7 @@ Every phase — from acquisition to reporting — is fully documented in [`docs/
 ---
 
 ## 📂 Repository Structure
+```bash
 Digital-forensics/
 ├─ README.md
 ├─ docs/
