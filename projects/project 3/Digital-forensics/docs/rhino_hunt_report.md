@@ -87,5 +87,5 @@ I opened rhino2.log. I traffic where I used the "export HTTP object traffic" opt
 
 Similarly, I opened rhino3.log. I traffic where I comibned the "export HTTP object traffic" option and "http.request" filter on Wireshark. Then, I retrieved the rhino.exe app and verified the md5sum for further analysis. 
 
-![Retrieve RhinoApp](../screenshots/retrive_rhinoapp.png) | ![Retrieve RhinoApp](../screenshots/retrive_rhinoapp1.png) | ![Retrieve RhinoApp](../screenshots/retrieve_rhinoapp2.png) | ![Verify RhinoApp](../screenshots/verify_rhinoapp.png)
+![Retrieve RhinoApp](../screenshots/retrieve_rhinoapp.png) | ![Retrieve RhinoApp](../screenshots/retrieve_rhinoapp1.png) | ![Retrieve RhinoApp](../screenshots/retrieve_rhinoapp2.png) | ![Verify RhinoApp](../screenshots/verify_rhinoapp.png)
 
