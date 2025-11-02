@@ -31,7 +31,7 @@ foremost -i RHINOUSB.dd  -t jpg,gif,png
 ```
 ![Run Foremost](../screenshots/foremost.png)
 Inspectes recovered files, including docs,gif and jpg.
-![Verify Foremost](../screenshots/verify_foremost.png,../screenshots/verify_foremost2.png) 
+![Verify Foremost](../screenshots/verify_foremost.png)![Verify Foremost](../screenshots/verify_foremost2.png) 
 
 
 
