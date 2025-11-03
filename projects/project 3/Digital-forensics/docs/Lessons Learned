@@ -1,0 +1,85 @@
+# 🧠 Lessons Learned — Rhino Hunt Forensics Analysis
+
+> **Author:** Ofoegbu Vincent  
+> **Case:** Rhino Hunt Digital Forensics Challenge  
+> **Focus:** USB image, network traces, steganography, file carving, and evidence correlation.
+
+---
+
+## 1. Verify integrity before analysis
+Before touching any evidence, I **verified the provided hashes** using `md5sum` to ensure the dataset hadn’t been tampered with.  
+This simple but essential step reinforced a key forensic principle — *“trust but verify.”*  
+If I had skipped this, I could have based my entire investigation on corrupted or altered data.
+
+**Takeaway:**  
+Always validate evidence integrity (hashes, signatures) before analysis. Integrity verification ensures findings remain admissible and defensible.
+
+---
+
+## 2. Don’t trust first impressions in steganalysis
+While running `stegdetect`, I initially flagged one image as a **false positive**, but further probing revealed it was actually **a true positive**.  
+This taught me that automation is not infallible — tools assist, but the analyst confirms.
+
+**Takeaway:**  
+Be patient and methodical. False positives can hide genuine clues. Cross-validate stego results using multiple tools (`stegdetect`, `stegbreak`, `jphide`) before ruling anything out.
+
+---
+
+## 3. Research-driven troubleshooting pays off
+During file carving, I struggled when `foremost` didn’t recover any files at first.  
+After research, I realized I needed to specify the correct file types with `-t jpg,gif,pdf`.  
+Once added, carving worked perfectly and I successfully recovered the rhino images.
+
+**Takeaway:**  
+Understand your tools — sometimes the solution isn’t in the GUI or the error message but in the documentation or community forums.  
+Learning how to adjust parameters and experiment is part of the process.
+
+---
+
+## 4. Context leads to clarity
+Reading the **diary file** midway through the challenge gave me new investigative direction — it mentioned “Jeremy,” passwords, and hints that connected USB activity to the network transfers.  
+Without contextual evidence, technical findings can appear random.
+
+**Takeaway:**  
+Always look for narrative artifacts (notes, text files, diaries, logs). They often provide the context that links raw evidence to intent and human behavior.
+
+---
+
+## 5. Correlation is where real analysis begins
+Recovering files is only half the job — the real insight came from correlating timestamps, hashes, and file names between the USB and the network logs.  
+This confirmed that `rhino2.jpg` from the FTP ZIP matched the carved USB file.
+
+**Takeaway:**  
+Always align technical evidence (timestamps, hashes) with behavioral evidence (logs, diary).  
+Correlation turns recovered data into actionable intelligence.
+
+---
+
+## 6. Learn the limits of automation
+Some tools made assumptions (e.g., stegdetect’s confidence ratings, foremost’s default file types) that almost caused me to miss key artifacts.  
+It’s easy to over-trust automation when under pressure.
+
+**Takeaway:**  
+Use automation to scale your work, not to replace your judgment. Always manually review critical artifacts before making conclusions.
+
+---
+
+## 7. Documentation builds discipline
+Keeping a detailed record of every command (`md5sum`, `foremost`, `zip2john`, `john`, `stegbreak`, `jphide`) helped me reproduce every step later without confusion.  
+It also made writing the report much easier.
+
+**Takeaway:**  
+Good documentation is part of forensics hygiene. Every analyst should be able to retrace their steps — including themselves months later.
+
+---
+
+## 8. Continuous learning mindset
+Every obstacle — from carving failures to password cracking to false positives — became a lesson.  
+Instead of frustration, I saw each challenge as a chance to grow as a forensic investigator.
+
+**Takeaway:**  
+The best investigators aren’t the ones who never get stuck — they’re the ones who **refuse to stay stuck**.
+
+---
+
+**End of Document**
