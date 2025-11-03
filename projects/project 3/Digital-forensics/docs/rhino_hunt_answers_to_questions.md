@@ -1,6 +1,6 @@
 # 🦏 Rhino Hunt — Questions & Answers
 
-> **Author:** Dagbo  
+> **Author:** Ofoegbu Vincent
 > This document contains my direct answers to the Rhino Hunt challenge questions, with evidence and references from my forensic analysis.
 
 ---
